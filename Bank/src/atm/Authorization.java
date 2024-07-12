@@ -61,8 +61,11 @@ class Authorization extends Upload {
 								System.out.println("Ваша карта разблокирована.");
 							} else {
 								System.out.println("Увы, Ваша карта заблокирована.");
-								skipWork = true;
 								access = false;
+								skipWork = true;
+								element.block = true;
+								element.blockTime = (new Date()).getTime();
+								user = element;
 							}
 
 						}
